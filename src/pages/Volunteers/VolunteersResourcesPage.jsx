@@ -8,7 +8,7 @@ import './VolunteersResourcesPage.css';
 const VolunteersResourcesPage = () => {
   return (
     <div>
-      <div className='resource1'><ResourceInventory /></div>
+      <div className='resource1'><ResourceInventory layout="topResourceInventory"/></div>
       <div className="middle-box">
         <div className="resource-heading">Recommended Volunteers</div>
         <div className="middle">
@@ -19,7 +19,7 @@ const VolunteersResourcesPage = () => {
       <div className="bottom-box">
         <div className="resource-box">
           <div className="resource-heading2">Resources</div>
-          <div className="resource2"><ResourceInventory /></div>
+          <div className="resource2"><ResourceInventory layout="bottomResourceInventory" /></div>
         </div>
         <div className='shelter-box'>
           <div className="shelter-heading">Shelter</div>
