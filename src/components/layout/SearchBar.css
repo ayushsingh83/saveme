@@ -1,0 +1,26 @@
+.searchbar-wrapper {
+    width:300px;
+    height:40px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:20px;
+    padding:0px 15px;
+}
+
+.searchbar-wrapper .bi {
+    font-size:20px;
+    color:#000000;
+}
+.searchbar-wrapper .input-box:focus {
+  outline: none;
+  border: none;
+}
+
+.searchbar-wrapper .bi:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}

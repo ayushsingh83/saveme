@@ -1,0 +1,22 @@
+ .sidebar-layout .sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 290px;
+  height: 100vh;
+  background: linear-gradient(180deg, #0f1115, #141821);
+  color: #cfd3dc;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  padding: 20px 14px;
+  box-shadow: 4px 0 24px rgba(0, 0, 0, 0.6);
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+.sidebar-layout .sidebar .sidebar-content{
+  margin-top: 60px;
+
+}
+
+

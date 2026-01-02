@@ -1,0 +1,12 @@
+.container-resources {
+    display: flex;
+    gap: 20px;
+}
+
+.container-resources::-webkit-scrollbar{
+    display: none;
+}
+
+/* .container-resources.top{
+    overflow-x: scroll;
+} */

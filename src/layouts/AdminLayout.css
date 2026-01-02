@@ -1,0 +1,33 @@
+.main-layout{
+    display: flex;
+    height: 100vh;
+    
+}
+
+.main-layout .sidebar-layout{
+    width:290px;
+    flex-shrink: 0;
+}
+
+.main-layout .main-page{
+    display:flex;
+    flex-direction: column;
+    flex:1;
+
+}
+ 
+.main-layout .main-page .topbar-layout{
+    height:70px;
+    flex-shrink: 0;
+    
+}
+.main-layout .main-page .dashboard-layout{
+    flex: 1;
+    width: fit-content;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: none;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-top:20px;
+}

@@ -1,0 +1,45 @@
+.shelter-card{
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    width:100%;
+    border-bottom: 1px solid gray;
+    padding-bottom: 5px;
+}
+
+.shelter-card .shelter-image{
+     width:50px;
+    height:50px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.shelter-card .shelter-header .shelter-name{
+    font-size:16px;
+    font-weight: 400;
+}
+.shelter-card .shelter-header .shelter-distance{
+    font-size:12px;
+    font-weight: 400;
+    opacity: 0.85;
+}
+.shelter-card .shelter-header .shelter-capacity{
+    font-size:14px;
+    font-weight: 200;
+    opacity:0.75;
+}
+
+.shelter-card .shelter-info{
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    opacity: 0.85;
+    font-weight:500;
+}
+
+.shelter-card .shelter-box1{
+    display: flex;
+    align-items: center;
+    gap:20px;
+}

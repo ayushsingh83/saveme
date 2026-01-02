@@ -1,0 +1,27 @@
+.sidebar-layout .sidebar .app-name-logo {
+    background-color: rgba(255, 255, 255, 0.1);
+    width: 290px;
+    height: 70px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    align-content: center;
+}
+
+.sidebar-layout .sidebar .app-name-logo .heading-container {
+    display: flex;
+    justify-content: space-between;
+    justify-items: center;
+    align-items: center;
+    padding:5px 10px;
+   
+}
+
+.sidebar-layout .sidebar .app-name-logo .heading-container .saveme-logo {
+    height: 45px;
+    width: 40px;
+}
+.sidebar-layout .sidebar .app-name-logo .heading-container .saveme-title {
+    height: 50%;
+    width: 50%;
+}

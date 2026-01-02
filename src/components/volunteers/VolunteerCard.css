@@ -1,0 +1,68 @@
+.container-volunteer-items .volunteer-items{
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid gray;
+    padding-bottom: 6px;
+}
+.container-volunteer-items .volunteer-items .volunteer-info .volunteer-details {
+    display: flex;
+    flex-direction: column;
+    gap:1px;
+    color:white;
+    font-family: "Inter", system-ui, sans-serif;
+    font-size: 14px;
+}
+
+.container-volunteer-items .volunteer-items .volunteer-info .volunteer-details .v-name{
+    font-size: 18px;
+}
+.container-volunteer-items .volunteer-items .volunteer-info .volunteer-details .v-role{
+    font-size: 14px;
+    opacity: 0.85;
+}
+.container-volunteer-items .volunteer-items .volunteer-info .volunteer-details .v-distance{
+    font-size: 12px;
+    opacity: 0.85;
+}
+
+.container-volunteer-items .volunteer-items .volunteer-info .volunteer-details .volunteer-details-bottom {
+    display: flex;
+    gap:80px;
+}
+
+.container-volunteer-items .volunteer-items .assign-button{
+    background-color: #e0ba21;
+    border: none;
+    color: rgb(0, 0, 0);
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    font-family: "Inter", system-ui, sans-serif;
+    font-weight: 500;
+    border-radius: 20px;
+    width:100px;
+}
+
+.container-volunteer-items .volunteer-items .assign-button:hover{
+    cursor: pointer;
+}
+
+.container-volunteer-items .volunteer-items .assigned{
+    background-color: #4CAF50; 
+}
+
+.container-volunteer-items .volunteer-items .volunteer-info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:20px;
+}
+
+.container-volunteer-items .volunteer-items .volunteer-info .volunteer-image{
+    width:50px;
+    height:50px;
+    border-radius: 50%;
+    overflow: hidden;
+}
