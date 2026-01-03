@@ -1,5 +1,5 @@
 .container-resource-map {
-    height: 320px;
+    height: 345px;
     width: 100%;
     flex: 1.3;
     background-color: rgba(0, 0, 0, 0.5);
@@ -18,7 +18,7 @@
 
 .container-resource-map .map-infobar {
     width: 100%;
-    height: 40px;
+    height: 60px;
     background-color: rgba(255, 255, 255, 0.6);
     border-radius: 0px 0px 10px 10px;
     display: flex;

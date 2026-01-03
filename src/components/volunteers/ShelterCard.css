@@ -1,47 +1,55 @@
-.shelter-card{
-    display:flex;
-    justify-content: space-between;
-    align-items:center;
-    width:100%;
-    border-bottom: 1px solid gray;
-    padding-bottom: 5px;
+.shelter-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0px 10px 5px 5px;
+  border-bottom: 1px solid gray;
 }
 
-.shelter-card .shelter-image{
-     width:50px;
-    height:50px;
-    border-radius: 50%;
-    overflow: hidden;
+.shelter-card:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  scale:1.03;
 }
 
-.shelter-card .shelter-header .shelter-name{
-    font-size:16px;
-    font-weight: 400;
-}
-.shelter-card .shelter-header .shelter-distance{
-    font-size:12px;
-    font-weight: 400;
-    opacity: 0.85;
-}
-.shelter-card .shelter-header .shelter-capacity{
-    font-size:14px;
-    font-weight: 200;
-    opacity:0.75;
+.shelter-card .shelter-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
 }
 
-.shelter-card .shelter-info{
-    font-size: 12px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    opacity: 0.85;
-    font-weight:500;
+.shelter-card .shelter-header .shelter-name {
+  font-size: 16px;
+  font-weight: 400;
 }
 
-.shelter-card .shelter-box1{
-    display: flex;
-    align-items: center;
-    gap:20px;
+.shelter-card .shelter-header .shelter-distance {
+  font-size: 12px;
+  font-weight: 400;
+  opacity: 0.85;
+}
+
+.shelter-card .shelter-header .shelter-capacity {
+  font-size: 14px;
+  font-weight: 200;
+  opacity: 0.75;
+}
+
+.shelter-card .shelter-info {
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  opacity: 0.85;
+  font-weight: 500;
+}
+
+.shelter-card .shelter-box1 {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
 .shelter-card .shelter-box1 .shelter-header .shelter-capacity .capacity-bar {
@@ -61,27 +69,20 @@
 }
 
 .shelter-available .capacity-fill {
-  background: linear-gradient(
-    to right,
-    rgba(34, 197, 94, 0.9),
-    rgba(34, 197, 94, 0.6)
-  );
+  background: linear-gradient(to right,
+      rgba(34, 197, 94, 0.9),
+      rgba(34, 197, 94, 0.6));
 }
 
 .shelter-near-full .capacity-fill {
-  background: linear-gradient(
-    to right,
-    rgba(245, 158, 11, 0.9),
-    rgba(245, 158, 11, 0.6)
-  );
+  background: linear-gradient(to right,
+      rgba(245, 158, 11, 0.9),
+      rgba(245, 158, 11, 0.6));
 }
 
 .shelter-critical .capacity-fill {
-  background: linear-gradient(
-    to right,
-    rgba(239, 68, 68, 0.9),
-    rgba(239, 68, 68, 0.6)
-  );
+  background: linear-gradient(to right,
+      rgba(239, 68, 68, 0.9),
+      rgba(239, 68, 68, 0.6));
   box-shadow: 0 0 8px rgba(239, 68, 68, 0.6);
 }
-

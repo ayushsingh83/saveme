@@ -1,15 +1,25 @@
 .container-volunteer-main {
     width: 500px;
-    height:345px;
-    background-color: rgba(255,255,255,0.2);
-    backdrop-filter:blur(6px);
+    height: 345px;
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(10px);
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     gap: 10px;
-    padding: 20px 30px;
+    padding: 18px 20px;
     border-radius: 10px;
     overflow-y: auto;
     scrollbar-width: none;
     flex: 1;
+}
+
+.container-volunteer-main .volunteer-header{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    color:white;
+    letter-spacing:0.5px;
 }

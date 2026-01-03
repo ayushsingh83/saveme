@@ -1,5 +1,8 @@
 import React from 'react';
 import './VolunteerCard.css';
+import { MapPin, Wifi, WifiOff } from "lucide-react";
+
+
 const VolunteerCard = (
   {
     id,
@@ -25,8 +28,19 @@ const VolunteerCard = (
             <h3 className='v-name'>{name}</h3>
             <p className='v-role'>{role}</p>
             <div className='volunteer-details-bottom'>
-              <p className='v-distance'>{distanceKm} km</p>
-              <div className="volunteer-status" style={{opacity:0.75, fontWeight:500}}>{status}</div>
+              <div className="v-distance">
+                <MapPin className="icon location-icon" />
+                <span className='distance-text'>{distanceKm} km</span>
+              </div>
+              <div className={`status ${status}`}>
+                {status === "online" ? (
+                  <Wifi className="icon status-icon online" />
+                ) : (
+                  <WifiOff className="icon status-icon offline" />
+                )}
+                <span className='status-text'>{status}</span>
+              </div>
+
             </div>
           </div>
         </div>

@@ -74,7 +74,7 @@ const ResourceInventory = ({layout}) => {
     status: "available",
     lastUpdated: "30 min ago",
     aiPriority: "low",
-    image: "ri-stack-fills"
+    image: "bi bi-layers-fill"
   },
   {
     id: "res_007",

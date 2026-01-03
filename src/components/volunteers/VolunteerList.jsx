@@ -103,6 +103,7 @@ const VolunteerList = () => {
       vol.id === id
         ? { ...vol, assignedSOS: !vol.assignedSOS }
         : vol
+        
     )
   );
   };
@@ -110,6 +111,7 @@ const VolunteerList = () => {
 
   return (
     <div className='container-volunteer-main'>
+      <span className='volunteer-header'>Recommended Volunteers</span>
       {volunteers.map((vol) => (
         <VolunteerCard
           key={vol.id}

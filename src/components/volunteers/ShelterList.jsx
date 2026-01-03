@@ -104,6 +104,7 @@ const ShelterList = () => {
 
     return (
         <div className="shelter-list">
+            <span>Shelter</span>
             {shelters.map((shelter) => (
                 <ShelterCard
                     key={shelter.id}
