@@ -1,7 +1,8 @@
 .container-volunteer-main {
     width: 500px;
-    height:320px;
-    background-color: rgba(0, 0, 0, 0.5);
+    height:345px;
+    background-color: rgba(255,255,255,0.2);
+    backdrop-filter:blur(6px);
     display: flex;
     flex-direction: column;
     justify-content: flex-start;

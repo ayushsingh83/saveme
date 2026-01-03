@@ -1,0 +1,50 @@
+.security-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(6px);
+  border-radius: 14px;
+  padding: 10px 18px;
+  width: 100%;
+}
+
+.security-header h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+.security-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.security-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  color: #e5e7eb;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.security-item:last-child {
+  border-bottom: none;
+}
+
+/* Button for actions */
+.security-btn {
+  padding: 6px 12px;
+  font-size: 12px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.security-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+}

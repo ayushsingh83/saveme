@@ -9,6 +9,13 @@
     justify-content: space-between;
 }
 
+.container-resource-map .map-holder{
+    overflow:auto;
+    scrollbar-width: none;
+    border-radius: 10px 10px 0px 0px;
+    cursor:pointer;
+}
+
 .container-resource-map .map-infobar {
     width: 100%;
     height: 40px;

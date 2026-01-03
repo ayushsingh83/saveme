@@ -1,0 +1,99 @@
+.system-pref-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(6px);
+  border-radius: 14px;
+  padding: 14px 16px;
+  width: 100%;
+}
+
+/* Header */
+.system-pref-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.system-pref-header h3 {
+  font-size: 15px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.view-details-btn {
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+}
+
+.view-details-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* Body */
+.system-pref-body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.pref-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pref-label {
+  font-size: 14px;
+  color: #e5e7eb;
+}
+
+/* Theme toggle */
+.theme-toggle {
+  display: flex;
+  gap: 8px;
+}
+
+.theme-btn {
+  font-size: 12px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  transition: 0.25s ease;
+}
+
+.theme-btn.active {
+  background: #3b82f6;
+}
+
+.theme-btn:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+/* Language */
+.language-select {
+  background: rgba(255, 255, 255, 0.12);
+  border: none;
+  border-radius: 8px;
+  padding: 6px 10px;
+  color: #ffffff;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.language-select option {
+  color: #000;
+}

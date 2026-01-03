@@ -1,0 +1,10 @@
+.container-device {
+    display: flex;
+    gap: 20px;
+    width:100%;
+}
+
+.container-device::-webkit-scrollbar{
+    display: none;
+}
+

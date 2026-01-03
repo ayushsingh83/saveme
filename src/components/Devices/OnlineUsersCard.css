@@ -1,0 +1,128 @@
+.user-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* LEFT SIDE */
+.user-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.avatar-wrapper {
+  position: relative;
+}
+
+.avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.online-dot {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  width: 9px;
+  height: 9px;
+  background: #22c55e;
+  border-radius: 50%;
+}
+
+.user-left-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  color: white;
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+.user-left-info h4 {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.user-left-bottomInfo {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  opacity: 0.75;
+}
+
+.location-pin {
+  width: 14px;
+  height: 14px;
+}
+
+.role {
+  font-style: italic;
+}
+
+.dot {
+  opacity: 0.5;
+}
+
+.user-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.device-info {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  opacity: 0.9;
+}
+
+
+.signal-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+}
+
+.bar {
+  width: 3px;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 2px;
+}
+
+.bar.active {
+  background: #22c55e;
+}
+
+.bar:nth-child(2) {
+  height: 9px;
+}
+
+.bar:nth-child(3) {
+  height: 12px;
+}
+
+.bar:nth-child(4) {
+  height: 15px;
+}
+
+.battery {
+  font-weight: 500;
+}
+
+.status {
+  font-size: 11px;
+  color: #22c55e;
+}

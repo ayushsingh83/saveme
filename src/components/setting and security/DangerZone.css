@@ -1,0 +1,65 @@
+.danger-zone-card {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(6px);
+  border-radius: 14px;
+  padding: 10px 18px;
+  width: 100%;
+}
+
+.danger-zone-header h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #f87171;
+  margin-bottom: 4px;
+}
+
+.danger-zone-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.danger-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.danger-item:last-child {
+  border-bottom: none;
+}
+
+.danger-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.danger-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #fee2e2;
+}
+
+.danger-desc {
+  font-size: 12px;
+  color: rgba(254, 226, 226, 0.7);
+}
+
+.danger-btn {
+  padding: 6px 14px;
+  font-size: 12px;
+  border-radius: 8px;
+  background: rgba(239, 68, 68, 0.85);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.danger-btn:hover {
+  background: rgb(220, 38, 38);
+}

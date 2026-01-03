@@ -7,7 +7,7 @@ import './VolunteersResourcesPage.css';
 
 const VolunteersResourcesPage = () => {
   return (
-    <div>
+    <div className='volunteers-page'>
       <div className='resource1'><ResourceInventory layout="topResourceInventory"/></div>
       <div className="middle-box">
         <div className="resource-heading">Recommended Volunteers</div>

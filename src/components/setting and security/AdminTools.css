@@ -1,0 +1,64 @@
+.admin-tools-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(6px);
+  border-radius: 14px;
+  padding: 10px 18px;
+  width: 100%;
+}
+
+.admin-tools-header h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+.admin-tools-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.admin-tool-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.admin-tool-item:last-child {
+  border-bottom: none;
+}
+
+.tool-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.tool-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #e5e7eb;
+}
+
+.tool-desc {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.admin-action-btn {
+  padding: 6px 14px;
+  font-size: 12px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.admin-action-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+}

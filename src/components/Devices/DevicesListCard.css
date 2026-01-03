@@ -1,0 +1,139 @@
+.device-row {
+  display: grid;
+  grid-template-columns: 2.2fr 1.6fr 1.2fr 1fr 1.2fr;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  color: rgba(255, 255, 255, 0.9);
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.device-row:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  
+}
+
+/* COMMON CELL */
+.cell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ICONS */
+.icon {
+  width: 16px;
+  height: 16px;
+  stroke-width: 1.8;
+}
+
+.icon.muted {
+  opacity: 0.6;
+}
+
+/* DEVICE NAME */
+.device-name {
+  font-weight: 500;
+}
+
+/* SIGNAL STATES */
+.signal.strong {
+  color: #6be2a6;
+}
+
+.signal.stable {
+  color: #f1c40f;
+}
+
+.signal.internet {
+  color: #5dade2;
+}
+
+.signal.weak {
+  color: #e67e22;
+}
+
+/* BATTERY */
+.battery {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* STATUS */
+.status {
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: 999px;
+  width: fit-content;
+}
+
+.status.active,
+.status.stable {
+  background: rgba(46, 204, 113, 0.15);
+  color: #2ecc71;
+}
+
+.status.problem {
+  background: rgba(231, 76, 60, 0.18);
+  color: #e74c3c;
+}
+
+.status-icon {
+  width: 14px;
+  height: 14px;
+}
+
+.battery-bar {
+  width: 60px;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.battery-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #2ecc71, #27ae60);
+  transition: width 0.4s ease;
+}
+
+.battery-fill.low {
+  background: linear-gradient(90deg, #e74c3c, #c0392b);
+}
+
+.battery-text {
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+.signal-bars {
+  display: flex;
+  gap: 2px;
+  align-items: flex-end;
+}
+
+.signal-bars span {
+  width: 3px;
+  height: 6px;
+  background: currentColor;
+  opacity: 0.3;
+  animation: signalPulse 1.2s infinite ease-in-out;
+}
+
+.signal-bars span:nth-child(2) {
+  height: 10px;
+  animation-delay: 0.15s;
+}
+
+.signal-bars span:nth-child(3) {
+  height: 14px;
+  animation-delay: 0.3s;
+}
+
+@keyframes signalPulse {
+  0% { opacity: 0.3; }
+  50% { opacity: 1; }
+  100% { opacity: 0.3; }
+}
