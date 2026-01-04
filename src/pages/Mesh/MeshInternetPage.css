@@ -1,0 +1,909 @@
+/* ===== MESH & INTERNET PAGE STYLES ===== */
+
+.mesh-internet-page {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 10px;
+  background: linear-gradient(135deg, #00000000 0%, #0b122000 100%);
+  overflow-y: auto;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* ===== PAGE HEADER ===== */
+
+.mesh-page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.mesh-page-title-section {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.mesh-page-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  font-size: 26px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.mesh-page-subtitle {
+  margin: 0;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.mesh-page-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.mesh-search-bar {
+  position: relative;
+  width: 180px;
+}
+
+.mesh-search-input {
+  width: 100%;
+  padding: 7px 10px;
+  background: rgba(0, 0, 0, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  color: #ffffff;
+  font-size: 11px;
+  backdrop-filter: blur(8px);
+}
+
+.mesh-search-input::placeholder {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.mesh-search-input:focus {
+  outline: none;
+  border-color: rgba(59, 130, 246, 0.3);
+  box-shadow: 0 0 8px rgba(59, 130, 246, 0.2);
+}
+
+.mesh-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.mesh-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.mesh-btn-secondary {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.mesh-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.mesh-toggle-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  user-select: none;
+  font-size: 11px;
+}
+
+.mesh-checkbox {
+  width: 14px;
+  height: 14px;
+  cursor: pointer;
+  accent-color: rgba(255, 255, 255, 0.6);
+}
+
+.mesh-toggle-text {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+/* ===== STATS GRID ===== */
+
+.mesh-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-bottom: 2px;
+}
+
+.mesh-stat-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  transition: all 0.15s ease;
+}
+
+.mesh-stat-card:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(255, 255, 255, 0.12);
+  transform: translateY(-1px);
+}
+
+.mesh-stat-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.mesh-stat-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.mesh-stat-label {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.55);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.mesh-stat-value {
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* ===== MAIN CONTENT GRID ===== */
+
+.mesh-content-grid {
+  display: grid;
+  grid-template-columns: 280px 1fr 260px;
+  gap: 12px;
+  min-height: 400px;
+}
+
+/* ===== LEFT PANEL - DEVICE LIST ===== */
+
+.mesh-left-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 0;
+}
+
+.mesh-device-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.mesh-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.mesh-panel-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  font-size: 13px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.mesh-device-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.mesh-device-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  overflow-y: auto;
+  padding-right: 6px;
+  flex: 1;
+}
+
+.mesh-device-list::-webkit-scrollbar {
+  width: 5px;
+}
+
+.mesh-device-list::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 3px;
+}
+
+.mesh-device-list::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+
+.mesh-device-list::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.mesh-device-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 8px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  border: none;
+}
+
+.mesh-device-item:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.mesh-device-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 6px;
+}
+
+.mesh-device-icon-section {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex: 1;
+  min-width: 0;
+}
+
+.mesh-device-role-icon {
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.mesh-device-name {
+  font-size: 11px;
+  font-weight: 600;
+  color: #ffffff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mesh-device-status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.mesh-device-details {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.mesh-detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 6px;
+  font-size: 10px;
+}
+
+.mesh-detail-label {
+  color: rgba(255, 255, 255, 0.45);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.2px;
+}
+
+.mesh-detail-value {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 600;
+}
+
+/* ===== CENTER COLUMN - NETWORK GRAPH ===== */
+
+.mesh-center-column {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 0;
+}
+
+.mesh-graph-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  flex: 1;
+  min-height: 0;
+}
+
+.mesh-graph-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.mesh-layer-toggles {
+  display: flex;
+  gap: 8px;
+}
+
+.mesh-mini-toggle {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 10px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.mesh-mini-toggle input {
+  width: 12px;
+  height: 12px;
+  accent-color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+}
+
+.mesh-graph-canvas {
+  position: relative;
+  width: 100%;
+  flex: 1;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  overflow: hidden;
+}
+
+/* Network Nodes */
+
+.mesh-node {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  transform: translate(-50%, -50%);
+}
+
+.mesh-node:hover {
+  transform: translate(-50%, -50%) scale(1.1);
+  border-color: rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.mesh-node.offline {
+  opacity: 0.5;
+  border-color: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.mesh-node-gateway {
+  width: 62px;
+  height: 62px;
+  border-color: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.mesh-node-gateway:hover {
+  border-color: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.09);
+}
+
+.mesh-node-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mesh-node-label {
+  font-size: 8px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
+/* Flow Lines */
+
+.mesh-flow-lines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.mesh-flow-line {
+  stroke: rgba(34, 197, 94, 0.3);
+  stroke-width: 1.5;
+  stroke-dasharray: 4, 4;
+  animation: mesh-flow-pulse 2s ease-in-out infinite;
+}
+
+@keyframes mesh-flow-pulse {
+  0%, 100% {
+    stroke-opacity: 0.2;
+  }
+  50% {
+    stroke-opacity: 0.6;
+  }
+}
+
+/* Internet Cloud */
+
+.mesh-internet-cloud {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  font-size: 10px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.75);
+  z-index: 10;
+}
+
+/* ===== RIGHT PANEL ===== */
+
+.mesh-right-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.mesh-gateway-panel,
+.mesh-controls-panel,
+.mesh-failover-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+}
+
+.mesh-gateway-panel {
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.mesh-gateway-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  overflow-y: auto;
+  padding-right: 4px;
+  flex: 1;
+}
+
+.mesh-gateway-list::-webkit-scrollbar {
+  width: 4px;
+}
+
+.mesh-gateway-list::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.mesh-gateway-list::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+}
+
+.mesh-gateway-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 6px;
+  padding: 7px;
+  background: transparent;
+  border-radius: 5px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  transition: all 0.15s ease;
+}
+
+.mesh-gateway-item:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.mesh-gateway-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+  min-width: 0;
+}
+
+.mesh-gateway-name {
+  font-size: 11px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.mesh-gateway-stats {
+  font-size: 9px;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.mesh-gateway-actions {
+  display: flex;
+  gap: 4px;
+}
+
+.mesh-btn-mini {
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  flex-shrink: 0;
+}
+
+.mesh-btn-mini:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.mesh-btn-mini.mesh-btn-active {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.mesh-control-list {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.mesh-control-item {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 0;
+  cursor: pointer;
+  user-select: none;
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.65);
+  transition: color 0.15s ease;
+}
+
+.mesh-control-item:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.mesh-control-item input {
+  width: 14px;
+  height: 14px;
+  accent-color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+}
+
+.mesh-failover-status {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.mesh-status-indicator {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 10px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 4px;
+  font-size: 9px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.8);
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+
+.mesh-status-detail {
+  display: flex;
+  justify-content: space-between;
+  gap: 6px;
+  font-size: 9px;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.mesh-status-detail strong {
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 700;
+  text-align: right;
+}
+
+/* ===== BOTTOM TABLE ===== */
+
+.mesh-table-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+}
+
+.mesh-devices-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 11px;
+  overflow-x: auto;
+}
+
+.mesh-devices-table thead {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.mesh-devices-table th {
+  padding: 8px;
+  text-align: left;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.65);
+  text-transform: uppercase;
+  letter-spacing: 0.2px;
+  font-size: 9px;
+  white-space: nowrap;
+}
+
+.mesh-devices-table tbody tr {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  transition: background 0.15s ease;
+}
+
+.mesh-devices-table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.mesh-devices-table td {
+  padding: 8px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.mesh-table-device {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.mesh-table-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.mesh-table-name {
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.mesh-table-id {
+  font-size: 9px;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.mesh-table-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  font-size: 9px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.75);
+  text-transform: capitalize;
+  white-space: nowrap;
+}
+
+.mesh-table-role {
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.mesh-table-signal {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.mesh-table-hops {
+  color: rgba(255, 255, 255, 0.55);
+  font-weight: 600;
+}
+
+.mesh-table-battery {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.mesh-battery-bar {
+  width: 40px;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 3px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.mesh-battery-bar > div {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.2s ease;
+}
+
+/* ===== GLASS PANEL STYLE ===== */
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+@media (max-width: 1440px) {
+  .mesh-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .mesh-content-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mesh-left-panel,
+  .mesh-center-column,
+  .mesh-right-panel {
+    min-height: 300px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .mesh-internet-page {
+    gap: 10px;
+    padding: 8px;
+  }
+
+  .mesh-stats-grid {
+    gap: 8px;
+  }
+
+  .mesh-stat-value {
+    font-size: 16px;
+  }
+
+  .mesh-page-controls {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .mesh-search-bar {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .mesh-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mesh-page-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .mesh-devices-table {
+    font-size: 10px;
+  }
+
+  .mesh-devices-table th,
+  .mesh-devices-table td {
+    padding: 6px;
+  }
+}
