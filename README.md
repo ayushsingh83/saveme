@@ -34,8 +34,6 @@ Hosting | Vercel / Firebase / Custom |
 
 ## 📸 Screenshots
 
-> *(Add screenshots here for more impact)*
-
-```md
 ![Dashboard](./screenshots/dashboard.png)
 ![Map View](./screenshots/map.png)
+![Alerts](./screenshots/alerts.png)
