@@ -1,51 +1,33 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { AlertTriangle, Send, Radio, CheckCircle } from 'lucide-react';
+import { dashboardMetricsAPI } from '../../api/apiLoaders';
 
 const AlertStatsCards = () => {
-  const cards = [
-    {
-      icon: AlertTriangle,
-      label: 'Total Alerts',
-      value: '248',
-      subtext: 'All alerts created',
-      color: 'from-slate-900/40 to-slate-800/40',
-      iconColor: 'text-orange-400',
-      bgIcon: 'bg-orange-500/10',
-    },
-    {
-      icon: Send,
-      label: 'Alerts Sent',
-      value: '198',
-      subtext: 'Successfully delivered',
-      color: 'from-slate-900/40 to-slate-800/40',
-      iconColor: 'text-green-400',
-      bgIcon: 'bg-green-500/10',
-      badge: 'Active',
-    },
-    {
-      icon: Radio,
-      label: 'Broadcasts',
-      value: '12',
-      subtext: 'Active channels',
-      color: 'from-slate-900/40 to-slate-800/40',
-      iconColor: 'text-blue-400',
-      bgIcon: 'bg-blue-500/10',
-    },
-    {
-      icon: CheckCircle,
-      label: 'Delivery Health',
-      value: '99.2%',
-      subtext: 'System status: Good',
-      color: 'from-slate-900/40 to-slate-800/40',
-      iconColor: 'text-emerald-400',
-      bgIcon: 'bg-emerald-500/10',
-    },
-  ];
+  const [cards, setCards] = useState([]);
+
+  useEffect(() => {
+    const loadAlertStats = async () => {
+      try {
+        const statsData = await dashboardMetricsAPI.getAlertStats();
+        setCards(statsData);
+      } catch (error) {
+        console.error('Failed to load alert stats:', error);
+      }
+    };
+    loadAlertStats();
+  }, []);
+
+  const iconMap = {
+    total_alerts: AlertTriangle,
+    alerts_sent: Send,
+    broadcasts: Radio,
+    delivery_health: CheckCircle
+  };
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
       {cards.map((card, idx) => {
-        const Icon = card.icon;
+        const Icon = iconMap[card.id];
         return (
           <div
             key={idx}
@@ -56,8 +38,8 @@ const AlertStatsCards = () => {
 
             <div className="relative z-10">
               <div className="flex justify-between items-start mb-3">
-                <div className={`${card.bgIcon} p-2.5 rounded-lg transition-transform duration-300 group-hover:scale-110`}>
-                  <Icon className={`w-5 h-5 ${card.iconColor}`} />
+                <div className={`${card.bg_icon} p-2.5 rounded-lg transition-transform duration-300 group-hover:scale-110`}>
+                  {Icon && <Icon className={`w-5 h-5 ${card.icon_color}`} />}
                 </div>
                 {card.badge && (
                   <span className="text-xs bg-green-500/20 text-green-300 px-2.5 py-1 rounded-full font-medium border border-green-500/40 animate-pulse">

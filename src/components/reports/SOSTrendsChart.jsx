@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Line } from 'react-chartjs-2';
 import {
   Chart as ChartJS,
@@ -11,71 +11,59 @@ import {
   Legend,
   Filler,
 } from 'chart.js';
+import { dashboardMetricsAPI } from '../../api/apiLoaders';
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, Filler);
 
 const SOSTrendsChart = () => {
   const [timeRange, setTimeRange] = useState('30');
+  const [chartData, setChartData] = useState(null);
 
-  const getChartData = () => {
-    switch (timeRange) {
-      case '7':
-        return {
-          labels: ['Day 1', 'Day 2', 'Day 3', 'Day 4', 'Day 5', 'Day 6', 'Day 7'],
-          incoming: [45, 52, 38, 61, 55, 48, 42],
-          resolved: [42, 48, 35, 58, 52, 46, 40],
-        };
-      case '90':
-        return {
-          labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6', 'Week 7', 'Week 8', 'Week 9', 'Week 10', 'Week 11', 'Week 12', 'Week 13'],
-          incoming: [315, 340, 328, 352, 380, 365, 392, 410, 385, 420, 405, 395, 410],
-          resolved: [300, 325, 315, 340, 365, 350, 375, 395, 370, 405, 390, 380, 395],
-        };
-      case '30':
-      default:
-        return {
-          labels: ['Day 1', 'Day 5', 'Day 10', 'Day 15', 'Day 20', 'Day 25', 'Day 30'],
-          incoming: [120, 135, 145, 155, 140, 165, 172],
-          resolved: [115, 130, 138, 148, 135, 158, 165],
-        };
-    }
-  };
-
-  const data = getChartData();
-
-  const chartData = {
-    labels: data.labels,
-    datasets: [
-      {
-        label: 'Incoming SOS',
-        data: data.incoming,
-        borderColor: '#3b82f6',
-        backgroundColor: 'rgba(59, 130, 246, 0.1)',
-        borderWidth: 2.5,
-        tension: 0.4,
-        fill: true,
-        pointRadius: 4,
-        pointBackgroundColor: '#3b82f6',
-        pointBorderColor: '#1e3a8a',
-        pointHoverRadius: 6,
-        pointHoverBackgroundColor: '#60a5fa',
-      },
-      {
-        label: 'Resolved SOS',
-        data: data.resolved,
-        borderColor: '#10b981',
-        backgroundColor: 'rgba(16, 185, 129, 0.1)',
-        borderWidth: 2.5,
-        tension: 0.4,
-        fill: true,
-        pointRadius: 4,
-        pointBackgroundColor: '#10b981',
-        pointBorderColor: '#065f46',
-        pointHoverRadius: 6,
-        pointHoverBackgroundColor: '#6ee7b7',
-      },
-    ],
-  };
+  useEffect(() => {
+    const loadTrends = async () => {
+      try {
+        const data = await dashboardMetricsAPI.getSOSTrends(timeRange);
+        if (data) {
+          setChartData({
+            labels: data.labels,
+            datasets: [
+              {
+                label: 'Incoming SOS',
+                data: data.incoming,
+                borderColor: '#3b82f6',
+                backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                borderWidth: 2.5,
+                tension: 0.4,
+                fill: true,
+                pointRadius: 4,
+                pointBackgroundColor: '#3b82f6',
+                pointBorderColor: '#1e3a8a',
+                pointHoverRadius: 6,
+                pointHoverBackgroundColor: '#60a5fa',
+              },
+              {
+                label: 'Resolved SOS',
+                data: data.resolved,
+                borderColor: '#10b981',
+                backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                borderWidth: 2.5,
+                tension: 0.4,
+                fill: true,
+                pointRadius: 4,
+                pointBackgroundColor: '#10b981',
+                pointBorderColor: '#065f46',
+                pointHoverRadius: 6,
+                pointHoverBackgroundColor: '#6ee7b7',
+              },
+            ],
+          });
+        }
+      } catch (error) {
+        console.error('Failed to load trends:', error);
+      }
+    };
+    loadTrends();
+  }, [timeRange]);
 
   const options = {
     responsive: true,
@@ -148,7 +136,7 @@ const SOSTrendsChart = () => {
       </div>
 
       <div style={{ height: '300px', position: 'relative' }}>
-        <Line data={chartData} options={options} />
+        {chartData && <Line data={chartData} options={options} />}
       </div>
     </div>
   );

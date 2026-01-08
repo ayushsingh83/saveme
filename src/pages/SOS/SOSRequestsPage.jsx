@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { AlertCircle, MapPin, Clock, Phone, CheckCircle, Zap, HelpCircle, WifiOff, Activity } from 'lucide-react';
 import StatusBadge from '../../components/sos/StatusBadge';
 import ConnectivityBadge from '../../components/sos/ConnectivityBadge';
+import { sosRequestsAPI } from '../../api/apiLoaders';
 import './SOSRequestsPage.css';
 
 /**
@@ -11,8 +12,32 @@ import './SOSRequestsPage.css';
  */
 const SOSRequestsPage = () => {
   // ============================================
-  // MOCK DATA - 23 Real Emergency Scenarios
+  // STATE MANAGEMENT
   // ============================================
+  const [sosRequests, setSOSRequests] = useState([]);
+  const [statusFilter, setStatusFilter] = useState('all');
+  const [emergencyFilter, setEmergencyFilter] = useState('all');
+  const [currentTime, setCurrentTime] = useState(new Date());
+  const [loading, setLoading] = useState(true);
+
+  // ============================================
+  // LOAD DATA FROM API
+  // ============================================
+  useEffect(() => {
+    const loadSOSData = async () => {
+      try {
+        const data = await sosRequestsAPI.getAll();
+        setSOSRequests(data);
+      } catch (error) {
+        console.error('Failed to load SOS data:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    loadSOSData();
+  }, []);
+
+  // Fallback mock data if API fails
   const mockSOSData = [
     { id: 'SOS-2501', userId: 'USR-8721', name: 'Priya Sharma', emergencyType: 'medical', location: 'Medical Clinic K., Sector 5', distance: 0.8, triggeredAt: new Date(Date.now() - 2 * 60000), status: 'new', connectivity: 'internet', responder: null },
     { id: 'SOS-2502', userId: 'USR-8722', name: 'Rajesh Kumar', emergencyType: 'fire', location: 'Industrial Area B', distance: 1.2, triggeredAt: new Date(Date.now() - 5 * 60000), status: 'new', connectivity: 'internet', responder: null },
@@ -38,14 +63,6 @@ const SOSRequestsPage = () => {
     { id: 'SOS-2522', userId: 'USR-8742', name: 'Nikhil Verma', emergencyType: 'trapped', location: 'Construction Site', distance: 4.4, triggeredAt: new Date(Date.now() - 137 * 60000), status: 'resolved', connectivity: 'mesh', responder: 'Construction Rescue' },
     { id: 'SOS-2523', userId: 'USR-8743', name: 'Ishita Roy', emergencyType: 'fire', location: 'Shopping Mall G', distance: 2.6, triggeredAt: new Date(Date.now() - 144 * 60000), status: 'new', connectivity: 'internet', responder: null }
   ];
-
-  // ============================================
-  // STATE MANAGEMENT
-  // ============================================
-  const [sosRequests, setSOSRequests] = useState(mockSOSData);
-  const [statusFilter, setStatusFilter] = useState('all');
-  const [emergencyFilter, setEmergencyFilter] = useState('all');
-  const [currentTime, setCurrentTime] = useState(new Date());
 
   // ============================================
   // LIVE TIMER UPDATE (every 30 seconds)

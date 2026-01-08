@@ -61,6 +61,12 @@ const Sidebar = () => {
           path="/settings"
           icon={<i className="bi bi-gear-fill"></i>}
         />
+
+        <SidebarItem
+          label="AI Agent Mode"
+          path="/AI"
+          icon={<i class="ri-ai"></i>}
+        />
       </div>
     </div>
   );

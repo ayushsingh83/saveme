@@ -9,6 +9,7 @@ import AlertsBroadcastPage from "../pages/Alerts/AlertsBroadcastPage";
 import VolunteersResourcesPage from "../pages/Volunteers/VolunteersResourcesPage";
 import ReportsAnalyticsPage from "../pages/Reports/ReportsAnalyticsPage";
 import SettingsSecurityPage from "../pages/Settings/SettingsSecurityPage";
+import AssistantPage from "../pages/AI/AssistantPage";
 
 const AdminRoutes = () => {
   return (
@@ -24,6 +25,7 @@ const AdminRoutes = () => {
           <Route path="/volunteers" element={<VolunteersResourcesPage />} />
           <Route path="/reports" element={<ReportsAnalyticsPage />} />
           <Route path="/settings" element={<SettingsSecurityPage />} />
+          <Route path="/AI" element={<AssistantPage/>} /> 
         </Route>
       </Routes>
     </BrowserRouter>

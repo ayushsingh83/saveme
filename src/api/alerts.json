@@ -1,0 +1,95 @@
+{
+  "alerts": [
+    {
+      "id": 1,
+      "title": "Cyclone Warning - Zone B",
+      "timestamp": "2025-01-15T10:05:00Z",
+      "engagement_percentage": 98.5,
+      "recipients": 15420,
+      "delivered": 15189,
+      "failed": 231,
+      "status": "active",
+      "message": "Severe cyclone warning for Zone B. Seek shelter immediately.",
+      "priority": "critical",
+      "delivery_mode": "all"
+    },
+    {
+      "id": 2,
+      "title": "Coastal Flooding Update",
+      "timestamp": "2025-01-15T09:45:00Z",
+      "engagement_percentage": 97.2,
+      "recipients": 8950,
+      "delivered": 8695,
+      "failed": 255,
+      "status": "active",
+      "message": "Flood levels rising in coastal areas. Evacuate low-lying regions.",
+      "priority": "high",
+      "delivery_mode": "coastal_zones"
+    },
+    {
+      "id": 3,
+      "title": "Emergency Shelter Alert",
+      "timestamp": "2025-01-15T08:35:00Z",
+      "engagement_percentage": 99.1,
+      "recipients": 12300,
+      "delivered": 12191,
+      "failed": 109,
+      "status": "active",
+      "message": "Emergency shelter opened at community center. Transport available.",
+      "priority": "high",
+      "delivery_mode": "affected_areas"
+    },
+    {
+      "id": 4,
+      "title": "Evacuation Order Zone A",
+      "timestamp": "2025-01-15T07:05:00Z",
+      "engagement_percentage": 94.6,
+      "recipients": 18750,
+      "delivered": 17738,
+      "failed": 1012,
+      "status": "completed",
+      "message": "Mandatory evacuation order for Zone A. All residents must leave.",
+      "priority": "critical",
+      "delivery_mode": "zone_a"
+    },
+    {
+      "id": 5,
+      "title": "Road Closure Notice",
+      "timestamp": "2025-01-15T04:55:00Z",
+      "engagement_percentage": 92.8,
+      "recipients": 25000,
+      "delivered": 23200,
+      "failed": 1800,
+      "status": "completed",
+      "message": "Main highway closed due to flooding. Use alternate routes.",
+      "priority": "medium",
+      "delivery_mode": "all"
+    },
+    {
+      "id": 6,
+      "title": "Weather Update",
+      "timestamp": "2025-01-15T02:00:00Z",
+      "engagement_percentage": 88.3,
+      "recipients": 6200,
+      "delivered": 5475,
+      "failed": 725,
+      "status": "completed",
+      "message": "Storm expected to weaken by evening. Stay alert.",
+      "priority": "low",
+      "delivery_mode": "all"
+    },
+    {
+      "id": 7,
+      "title": "Supply Distribution Center",
+      "timestamp": "2025-01-14T22:00:00Z",
+      "engagement_percentage": 91.5,
+      "recipients": 9800,
+      "delivered": 8967,
+      "failed": 833,
+      "status": "completed",
+      "message": "Food and water distribution at main plaza. Come prepared.",
+      "priority": "medium",
+      "delivery_mode": "central_areas"
+    }
+  ]
+}

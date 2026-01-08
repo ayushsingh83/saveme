@@ -1,0 +1,124 @@
+{
+  "devices": [
+    {
+      "id": "dev_1",
+      "name": "Main Gateway",
+      "user": "Clint R.",
+      "signal": "Strong",
+      "battery_min": 18,
+      "status": "Stable",
+      "role": "Gateway",
+      "hops": null,
+      "internet": true,
+      "battery": 18
+    },
+    {
+      "id": "dev_2",
+      "name": "Portable Gateway",
+      "user": "Warehouse 2",
+      "signal": "Stable",
+      "battery_min": 75,
+      "status": "Problem",
+      "role": "Gateway",
+      "hops": null,
+      "internet": true,
+      "battery": 75
+    },
+    {
+      "id": "dev_3",
+      "name": "John's iPhone 12 Pro",
+      "user": "John V.",
+      "signal": "Strong",
+      "battery_min": 71,
+      "status": "Active",
+      "role": "Node",
+      "hops": 2,
+      "internet": false,
+      "battery": 71
+    },
+    {
+      "id": "dev_4",
+      "name": "Command Center PC",
+      "user": "Olivia S.",
+      "signal": "Internet",
+      "battery_min": 100,
+      "status": "Problem",
+      "role": "Gateway",
+      "hops": null,
+      "internet": true,
+      "battery": 100
+    },
+    {
+      "id": "dev_5",
+      "name": "Rescue Team Tablet",
+      "user": "Amit R.",
+      "signal": "Weak",
+      "battery_min": 22,
+      "status": "Problem",
+      "role": "Node",
+      "hops": 4,
+      "internet": false,
+      "battery": 22
+    },
+    {
+      "id": "dev_6",
+      "name": "Medical Camp Router",
+      "user": "Relief Camp A",
+      "signal": "Stable",
+      "battery_min": 56,
+      "status": "Stable",
+      "role": "Gateway",
+      "hops": null,
+      "internet": true,
+      "battery": 56
+    },
+    {
+      "id": "dev_7",
+      "name": "Satellite Phone X3",
+      "user": "Neha S.",
+      "signal": "Internet",
+      "battery_min": 90,
+      "status": "Active",
+      "role": "Gateway",
+      "hops": null,
+      "internet": true,
+      "battery": 90
+    },
+    {
+      "id": "dev_8",
+      "name": "Flood Zone Mesh Node",
+      "user": "Zone B Control",
+      "signal": "Weak",
+      "battery_min": 12,
+      "status": "Problem",
+      "role": "Node",
+      "hops": 5,
+      "internet": false,
+      "battery": 12
+    },
+    {
+      "id": "dev_9",
+      "name": "Volunteer iPad Mini",
+      "user": "Sara K.",
+      "signal": "Strong",
+      "battery_min": 64,
+      "status": "Active",
+      "role": "Node",
+      "hops": 1,
+      "internet": false,
+      "battery": 64
+    },
+    {
+      "id": "dev_10",
+      "name": "Emergency Ops Laptop",
+      "user": "District HQ",
+      "signal": "Internet",
+      "battery_min": 48,
+      "status": "Stable",
+      "role": "Gateway",
+      "hops": null,
+      "internet": true,
+      "battery": 48
+    }
+  ]
+}

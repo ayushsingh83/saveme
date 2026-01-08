@@ -1,109 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Clock, MapPin, Phone, HelpCircle } from 'lucide-react';
+import { sosRequestsAPI } from '../../api/apiLoaders';
 
 const LiveSOSActivityList = () => {
   const [activeFilter, setActiveFilter] = useState('all');
+  const [allSosRequests, setAllSosRequests] = useState([]);
 
-  const allSosRequests = [
-    {
-      id: 1,
-      name: 'Abby Johnson',
-      avatar: 'AJ',
-      emergencyType: 'Medical',
-      location: 'Medical Clinic K.',
-      timeElapsed: '8 min',
-      distance: '1.2 km',
-      status: 'assigned',
-      assignedTo: 'John M.',
-      bgColor: 'from-red-500/20 to-red-600/10',
-      textColor: 'text-red-400',
-      statusColor: 'bg-yellow-500/20 text-yellow-400'
-    },
-    {
-      id: 2,
-      name: 'Cherry Patel',
-      avatar: 'CP',
-      emergencyType: 'Flood',
-      location: 'Flood Zone B',
-      timeElapsed: '10 min',
-      distance: '840 m',
-      status: 'in-progress',
-      assignedTo: 'Ryan M.',
-      bgColor: 'from-blue-500/20 to-blue-600/10',
-      textColor: 'text-blue-400',
-      statusColor: 'bg-blue-500/20 text-blue-400'
-    },
-    {
-      id: 3,
-      name: 'Taylor Wilson',
-      avatar: 'TW',
-      emergencyType: 'Trapped',
-      location: 'Ryan M.',
-      timeElapsed: '2 hr',
-      distance: '5.2 km',
-      status: 'new',
-      assignedTo: null,
-      bgColor: 'from-purple-500/20 to-purple-600/10',
-      textColor: 'text-purple-400',
-      statusColor: 'bg-red-500/20 text-red-400'
-    },
-    {
-      id: 4,
-      name: 'Raheel Bhaskar',
-      avatar: 'RB',
-      emergencyType: 'Fire',
-      location: '5.7 km',
-      timeElapsed: '1 hr',
-      distance: '9.2 km',
-      status: 'assigned',
-      assignedTo: 'Michael K.',
-      bgColor: 'from-orange-500/20 to-orange-600/10',
-      textColor: 'text-orange-400',
-      statusColor: 'bg-yellow-500/20 text-yellow-400'
-    },
-    {
-      id: 5,
-      name: 'Judy Smith',
-      avatar: 'JS',
-      emergencyType: 'Offline',
-      location: '280 m',
-      timeElapsed: '18 min',
-      distance: '2.1 km',
-      status: 'offline',
-      assignedTo: null,
-      bgColor: 'from-gray-500/20 to-gray-600/10',
-      textColor: 'text-gray-400',
-      statusColor: 'bg-gray-500/20 text-gray-300'
-    },
-    {
-      id: 6,
-      name: 'Judy Smith',
-      avatar: 'JS',
-      emergencyType: 'Offline',
-      location: '280 m',
-      timeElapsed: '18 min',
-      distance: '2.1 km',
-      status: 'offline',
-      assignedTo: null,
-      bgColor: 'from-gray-500/20 to-gray-600/10',
-      textColor: 'text-gray-400',
-      statusColor: 'bg-gray-500/20 text-gray-300'
-    },
-    {
-      id: 7,
-      name: 'Judy Smith',
-      avatar: 'JS',
-      emergencyType: 'Offline',
-      location: '280 m',
-      timeElapsed: '18 min',
-      distance: '2.1 km',
-      status: 'offline',
-      assignedTo: null,
-      bgColor: 'from-gray-500/20 to-gray-600/10',
-      textColor: 'text-gray-400',
-      statusColor: 'bg-gray-500/20 text-gray-300'
-    }
-  ];
+  useEffect(() => {
+    const loadSOS = async () => {
+      try {
+        const data = await sosRequestsAPI.getAll();
+        setAllSosRequests(data);
+      } catch (error) {
+        console.error('Failed to load SOS data:', error);
+      }
+    };
+    loadSOS();
+  }, []);
 
   const filteredRequests = allSosRequests.filter(sos => {
     if (activeFilter === 'all') return true;
@@ -112,15 +25,15 @@ const LiveSOSActivityList = () => {
 
   const getEmergencyIcon = (type) => {
     switch (type) {
-      case 'Medical':
+      case 'medical':
         return '🏥';
-      case 'Fire':
+      case 'fire':
         return '🔥';
-      case 'Flood':
+      case 'flood':
         return '🌊';
-      case 'Trapped':
+      case 'trapped':
         return '🏔️';
-      case 'Offline':
+      case 'offline':
         return '📵';
       default:
         return '⚠️';
@@ -152,6 +65,17 @@ const LiveSOSActivityList = () => {
     { id: 'resolved', label: 'Resolved', count: allSosRequests.filter(s => s.status === 'resolved').length }
   ];
 
+  const getTimeSince = (dateString) => {
+    const date = new Date(dateString);
+    const now = new Date();
+    const minutes = Math.floor((now - date) / 60000);
+    if (minutes < 1) return 'Just now';
+    if (minutes === 1) return '1 min';
+    if (minutes < 60) return `${minutes} min`;
+    const hours = Math.floor(minutes / 60);
+    return `${hours}h ${minutes % 60}m`;
+  };
+
   return (
     <div className="flex flex-col h-full">
       {/* Tab Filters - Fixed at Top */}
@@ -176,28 +100,29 @@ const LiveSOSActivityList = () => {
         {filteredRequests.length > 0 ? (
           filteredRequests.map((sos) => {
             const statusBadge = getStatusBadge(sos.status);
+            const avatar = sos.name.split(' ').map(n => n[0]).join('');
             return (
               <div
                 key={sos.id}
-                className={`bg-gradient-to-br ${sos.bgColor} border border-gray-700/30 rounded-xl p-4 hover:border-gray-600/50 transition-all duration-200 backdrop-blur-sm hover:shadow-lg hover:shadow-slate-900/50`}
+                className={`bg-gradient-to-br border border-gray-700/30 rounded-xl p-4 hover:border-gray-600/50 transition-all duration-200 backdrop-blur-sm hover:shadow-lg hover:shadow-slate-900/50`}
               >
                 <div className="flex items-start justify-between gap-3">
                   {/* Left: Avatar and Info */}
                   <div className="flex gap-3 flex-1 min-w-0">
                     <div className="w-10 h-10 rounded-full bg-gradient-to-br from-gray-700 to-gray-800 flex items-center justify-center flex-shrink-0 border border-gray-600/50 text-xs font-bold text-white">
-                      {sos.avatar}
+                      {avatar}
                     </div>
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2 flex-wrap">
                         <span className="font-semibold text-white text-sm">{sos.name}</span>
-                        <span className="text-lg">{getEmergencyIcon(sos.emergencyType)}</span>
+                        <span className="text-lg">{getEmergencyIcon(sos.emergency_type)}</span>
                       </div>
                       <div className="text-xs text-gray-400 flex items-center gap-1 mt-1">
                         <MapPin className="w-3 h-3 flex-shrink-0" />
                         <span className="truncate">{sos.location}</span>
                       </div>
-                      {sos.assignedTo && (
-                        <div className="text-xs text-gray-500 mt-1">Assigned to: {sos.assignedTo}</div>
+                      {sos.responder && (
+                        <div className="text-xs text-gray-500 mt-1">Assigned to: {sos.responder}</div>
                       )}
                     </div>
                   </div>
@@ -206,11 +131,11 @@ const LiveSOSActivityList = () => {
                   <div className="text-right flex-shrink-0 text-xs">
                     <div className="text-gray-400 flex items-center justify-end gap-1 mb-1">
                       <Clock className="w-3 h-3" />
-                      {sos.timeElapsed}
+                      {getTimeSince(sos.triggered_at)}
                     </div>
                     <div className="text-gray-400 flex items-center justify-end gap-1">
                       <MapPin className="w-3 h-3" />
-                      {sos.distance}
+                      {sos.distance_km} km
                     </div>
                   </div>
 

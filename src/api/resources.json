@@ -1,0 +1,88 @@
+{
+  "resources": [
+    {
+      "id": "res_001",
+      "name": "First Aid Kit",
+      "category": "Medical",
+      "quantity": 120,
+      "unit": "kits",
+      "location": "Relief Camp A",
+      "status": "available",
+      "last_updated": "10 min ago",
+      "ai_priority": "high",
+      "icon": "ri-first-aid-kit-fill"
+    },
+    {
+      "id": "res_002",
+      "name": "Oxygen Cylinder",
+      "category": "Medical",
+      "quantity": 35,
+      "unit": "units",
+      "location": "District Hospital",
+      "status": "low",
+      "last_updated": "5 min ago",
+      "ai_priority": "critical",
+      "icon": "ri-medicine-bottle-fill"
+    },
+    {
+      "id": "res_003",
+      "name": "Rescue Boats",
+      "category": "Rescue",
+      "quantity": 12,
+      "unit": "boats",
+      "location": "Flood Zone B",
+      "status": "available",
+      "last_updated": "20 min ago",
+      "ai_priority": "medium",
+      "icon": "ri-ship-2-fill"
+    },
+    {
+      "id": "res_004",
+      "name": "Food Packets",
+      "category": "Supplies",
+      "quantity": 450,
+      "unit": "packs",
+      "location": "Warehouse 3",
+      "status": "available",
+      "last_updated": "15 min ago",
+      "ai_priority": "medium",
+      "icon": "ri-restaurant-fill"
+    },
+    {
+      "id": "res_005",
+      "name": "Drinking Water",
+      "category": "Supplies",
+      "quantity": 80,
+      "unit": "litres",
+      "location": "Relief Camp B",
+      "status": "low",
+      "last_updated": "8 min ago",
+      "ai_priority": "high",
+      "icon": "ri-drop-fill"
+    },
+    {
+      "id": "res_006",
+      "name": "Blankets",
+      "category": "Shelter",
+      "quantity": 200,
+      "unit": "units",
+      "location": "Community Hall",
+      "status": "available",
+      "last_updated": "30 min ago",
+      "ai_priority": "low",
+      "icon": "bi bi-layers-fill"
+    },
+    {
+      "id": "res_007",
+      "name": "Satellite Phones",
+      "category": "Communication",
+      "quantity": 6,
+      "unit": "devices",
+      "location": "Command Center",
+      "status": "critical",
+      "last_updated": "2 min ago",
+      "ai_priority": "critical",
+      "icon": "bi bi-phone-fill"
+    }
+  ]
+}

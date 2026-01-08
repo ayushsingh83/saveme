@@ -1,0 +1,108 @@
+{
+  "shelters": [
+    {
+      "id": "shelter_001",
+      "name": "Willow Grove School",
+      "distance_km": 1.7,
+      "total_capacity": 300,
+      "occupied": 250,
+      "status": "near-full",
+      "resources": ["Food", "Water", "Medical"],
+      "last_updated": "5 min ago",
+      "coordinator": "John V.",
+      "image": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?",
+      "occupancy_percentage": 83
+    },
+    {
+      "id": "shelter_002",
+      "name": "Evanston Community Hall",
+      "distance_km": 2.0,
+      "total_capacity": 360,
+      "occupied": 190,
+      "status": "available",
+      "resources": ["Food", "Water"],
+      "last_updated": "8 min ago",
+      "coordinator": "Ryan M.",
+      "image": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?",
+      "occupancy_percentage": 53
+    },
+    {
+      "id": "shelter_003",
+      "name": "Riverfront Sports Complex",
+      "distance_km": 3.4,
+      "total_capacity": 500,
+      "occupied": 410,
+      "status": "critical",
+      "resources": ["Medical", "Power Backup"],
+      "last_updated": "2 min ago",
+      "coordinator": "Neha S.",
+      "image": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?",
+      "occupancy_percentage": 82
+    },
+    {
+      "id": "shelter_004",
+      "name": "Hillview High School",
+      "distance_km": 4.2,
+      "total_capacity": 420,
+      "occupied": 180,
+      "status": "available",
+      "resources": ["Food", "Water", "Charging"],
+      "last_updated": "12 min ago",
+      "coordinator": "Olivia S.",
+      "image": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?",
+      "occupancy_percentage": 43
+    },
+    {
+      "id": "shelter_005",
+      "name": "Downtown Convention Center",
+      "distance_km": 6.8,
+      "total_capacity": 800,
+      "occupied": 760,
+      "status": "critical",
+      "resources": ["Medical", "Food", "Power Backup", "Security"],
+      "last_updated": "1 min ago",
+      "coordinator": "Clint R.",
+      "image": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?",
+      "occupancy_percentage": 95
+    },
+    {
+      "id": "shelter_006",
+      "name": "Lakeside Community Center",
+      "distance_km": 5.1,
+      "total_capacity": 250,
+      "occupied": 120,
+      "status": "available",
+      "resources": ["Food", "Water"],
+      "last_updated": "20 min ago",
+      "coordinator": "Priya M.",
+      "image": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?",
+      "occupancy_percentage": 48
+    },
+    {
+      "id": "shelter_007",
+      "name": "Greenfield Stadium",
+      "distance_km": 7.5,
+      "total_capacity": 600,
+      "occupied": 520,
+      "status": "near-full",
+      "resources": ["Medical", "Water", "Power Backup"],
+      "last_updated": "6 min ago",
+      "coordinator": "Arjun T.",
+      "image": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?",
+      "occupancy_percentage": 87
+    },
+    {
+      "id": "shelter_008",
+      "name": "Northside Indoor Arena",
+      "distance_km": 9.3,
+      "total_capacity": 480,
+      "occupied": 90,
+      "status": "available",
+      "resources": ["Food", "Water", "Charging"],
+      "last_updated": "25 min ago",
+      "coordinator": "Sara K.",
+      "image": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?",
+      "occupancy_percentage": 19
+    }
+  ]
+}

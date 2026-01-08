@@ -1,67 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Clock, MessageSquare } from 'lucide-react';
+import { alertsAPI } from '../../api/apiLoaders';
 
 const BroadcastHistory = () => {
-  const [broadcasts] = useState([
-    {
-      id: 1,
-      title: 'Cyclone Warning - Zone B',
-      timestamp: new Date(Date.now() - 5 * 60000),
-      engagement: 98.5,
-      recipients: 15420,
-      message: 'Severe cyclone warning for Zone B. Seek shelter immediately.',
-    },
-    {
-      id: 2,
-      title: 'Coastal Flooding Update',
-      timestamp: new Date(Date.now() - 25 * 60000),
-      engagement: 97.2,
-      recipients: 8950,
-      message: 'Flood levels rising in coastal areas. Evacuate low-lying regions.',
-    },
-    {
-      id: 3,
-      title: 'Emergency Shelter Alert',
-      timestamp: new Date(Date.now() - 1.5 * 3600000),
-      engagement: 99.1,
-      recipients: 12300,
-      message: 'Emergency shelter opened at community center. Transport available.',
-    },
-    {
-      id: 4,
-      title: 'Evacuation Order Zone A',
-      timestamp: new Date(Date.now() - 3 * 3600000),
-      engagement: 94.6,
-      recipients: 18750,
-      message: 'Mandatory evacuation order for Zone A. All residents must leave.',
-    },
-    {
-      id: 5,
-      title: 'Road Closure Notice',
-      timestamp: new Date(Date.now() - 5.5 * 3600000),
-      engagement: 92.8,
-      recipients: 25000,
-      message: 'Main highway closed due to flooding. Use alternate routes.',
-    },
-    {
-      id: 6,
-      title: 'Weather Update',
-      timestamp: new Date(Date.now() - 8 * 3600000),
-      engagement: 88.3,
-      recipients: 6200,
-      message: 'Storm expected to weaken by evening. Stay alert.',
-    },
-    {
-      id: 7,
-      title: 'Supply Distribution Center',
-      timestamp: new Date(Date.now() - 10 * 3600000),
-      engagement: 91.5,
-      recipients: 9800,
-      message: 'Food and water distribution at main plaza. Come prepared.',
-    },
-  ]);
+  const [broadcasts, setBroadcasts] = useState([]);
 
-  const formatTime = (date) => {
+  useEffect(() => {
+    const loadBroadcasts = async () => {
+      try {
+        const data = await alertsAPI.getAll();
+        setBroadcasts(data);
+      } catch (error) {
+        console.error('Failed to load broadcasts:', error);
+      }
+    };
+    loadBroadcasts();
+  }, []);
+
+  const formatTime = (dateString) => {
+    const date = new Date(dateString);
     const now = new Date();
     const diff = Math.floor((now - date) / 1000);
 
@@ -110,12 +67,12 @@ const BroadcastHistory = () => {
             <div className="space-y-2">
               <div className="flex items-center justify-between text-xs">
                 <span className="text-gray-500">Engagement</span>
-                <span className="text-green-400 font-medium">{broadcast.engagement}%</span>
+                <span className="text-green-400 font-medium">{broadcast.engagement_percentage}%</span>
               </div>
               <div className="w-full bg-slate-700/40 rounded-full h-1.5">
                 <div
                   className="bg-gradient-to-r from-green-500 to-emerald-500 h-full rounded-full transition-all"
-                  style={{ width: `${broadcast.engagement}%` }}
+                  style={{ width: `${broadcast.engagement_percentage}%` }}
                 />
               </div>
             </div>
